@@ -35,7 +35,7 @@ header#header {
     margin-bottom: 0;        
 }
 #countdown-clock{
-	font-size: 30px;
+	font-size: 25px;
 	display: flex;
 	justify-content: center;
 	margin: 50px;
@@ -55,6 +55,7 @@ header#header {
 	text-transform: uppercase;
     display: block;
 }
+
 .main-content p {
     font-size: 1em;
     margin: 0;

@@ -37,19 +37,19 @@
 
 					<div id="countdown-clock">
 						<div class="time">
-							<span class="days"></span>
+							<span id="days"></span>
 							<small>Days</small>
 						</div>
 						<div class="time">
-							<span class="hours"></span>
+							<span id="hours"></span>
 							<small>Hours</small>
 						</div>
 						<div class="time">
-							<span class="minutes"></span>
+							<span id="minutes"></span>
 							<small>Minutes</small>
 						</div>
 						<div class="time">
-							<span class="seconds"></span>
+							<span id="seconds"></span>
 							<small>Seconds</small>
 						</div>
 					</div>
@@ -107,19 +107,18 @@
 	  var distance = countDownDate - now;
 	
 	  // Time calculations for days, hours, minutes and seconds
-	  var daysSpan = Math.floor(distance / (1000 * 60 * 60 * 24));
-	  var hoursSpan = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-	  var minutesSpan = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-	  var secondsSpan = Math.floor((distance % (1000 * 60)) / 1000);
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 	
 	  // Display the result in the element with id="demo"
 	  //document.getElementById("demo").innerHTML = days + "d " + hours + "h "
 	  //+ minutes + "m " + seconds + "s ";
-	  document.getElementById("days").innerHTML= daysSpan ;
-	  document.getElementById("hours").innerHTML= hoursSpan ;
-	  document.getElementById("minutes").innerHTML= minutesSpan ;
-	  document.getElementById("seconds").innerHTML= secondsSpan ;	
-
+	  document.getElementById("days").innerHTML = days
+	  document.getElementById("hours").innerHTML = hours
+	  document.getElementById("minutes").innerHTML = minutes
+	  document.getElementById("seconds").innerHTML = seconds
 	
 	  // If the count down is finished, write some text
 	  if (distance < 0) {
@@ -127,8 +126,6 @@
 		document.getElementById("countdown-clock").innerHTML = "EXPIRED";
 	  }
 	}, 1000);
-	updateClock();
-	const timeinterval = setInterval(updateClock, 1000);
 	</script>
 
 
